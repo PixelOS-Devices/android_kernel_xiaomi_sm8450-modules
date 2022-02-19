@@ -4250,7 +4250,6 @@ static int _sde_crtc_vblank_enable(
 		}
 
 		mutex_unlock(&sde_crtc->crtc_lock);
-		sde_kms_cpu_vote_for_irq(_sde_crtc_get_kms(crtc), true);
 	} else {
 		mutex_lock(&sde_crtc->crtc_lock);
 		drm_for_each_encoder_mask(enc, crtc->dev,
@@ -4261,7 +4260,6 @@ static int _sde_crtc_vblank_enable(
 		}
 
 		mutex_unlock(&sde_crtc->crtc_lock);
-		sde_kms_cpu_vote_for_irq(_sde_crtc_get_kms(crtc), false);
 		pm_runtime_put_sync(crtc->dev->dev);
 	}
 
