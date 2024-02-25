@@ -26,7 +26,7 @@
 void debug_dump_bytes(uint8_t *buffer, uint16_t length, char *pDescription)
 {
 	int8_t stream[60];
-	int8_t byteOffsetStr[10];
+	char byteOffsetStr[6];
 	uint32_t i;
 	uint16_t offset, count, byteOffset;
 
