@@ -55,6 +55,7 @@
 #include "msm_mmu.h"
 #include "sde_wb.h"
 #include "sde_dbg.h"
+#include "sde_fence.h"
 
 /*
  * MSM driver version:
@@ -2325,6 +2326,7 @@ static int __init msm_drm_register(void)
 		return -EINVAL;
 
 	DBG("init");
+        sde_kmem_pool_init();
 	sde_rsc_rpmh_register();
 	sde_rsc_register();
 	msm_smmu_driver_init();
