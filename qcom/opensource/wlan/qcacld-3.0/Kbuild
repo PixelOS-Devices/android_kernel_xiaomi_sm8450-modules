@@ -3033,6 +3033,9 @@ ccflags-y += $(INCS)
 cppflags-y +=	-Wall\
 		-Werror
 
+# Utilize MLGO inliner for output size
+ldflags-y += -mllvm -enable-ml-inliner=release
+
 cppflags-$(CONFIG_THERMAL_STATS_SUPPORT) += -DTHERMAL_STATS_SUPPORT
 cppflags-$(CONFIG_PTT_SOCK_SVC_ENABLE) += -DPTT_SOCK_SVC_ENABLE
 cppflags-$(CONFIG_FEATURE_WLAN_WAPI) += -DFEATURE_WLAN_WAPI
