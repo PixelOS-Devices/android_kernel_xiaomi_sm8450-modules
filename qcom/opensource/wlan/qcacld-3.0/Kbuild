@@ -3035,6 +3035,7 @@ cppflags-y +=	-Wall\
 
 # Utilize MLGO inliner for output size
 ldflags-y += -mllvm -enable-ml-inliner=release
+ldflags-y += -mllvm -ml-inliner-model-selector=arm64-mixed
 
 cppflags-$(CONFIG_THERMAL_STATS_SUPPORT) += -DTHERMAL_STATS_SUPPORT
 cppflags-$(CONFIG_PTT_SOCK_SVC_ENABLE) += -DPTT_SOCK_SVC_ENABLE
